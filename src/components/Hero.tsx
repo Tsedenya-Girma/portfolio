@@ -33,9 +33,10 @@ export default function Hero() {
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-6 sm:gap-10 px-6 py-4 sm:py-8 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:py-20">
         {/* left */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
+          initial={{ opacity: 0, y: -60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, margin: "-80px" }}
+          transition={{ type: "spring", stiffness: 70, damping: 10, mass: 1.2 }}
           className="flex flex-col"
         >
           <div className="mb-8 flex items-center gap-3">
@@ -99,8 +100,9 @@ export default function Hero() {
         {/* right — ID card */}
         <motion.div
           initial={{ y: -150, rotateZ: 15, opacity: 0 }}
-          animate={{ y: 0, rotateZ: 0, opacity: 1 }}
-          transition={{ type: "spring", stiffness: 70, damping: 8, mass: 1.5, delay: 0.2 }}
+          whileInView={{ y: 0, rotateZ: 0, opacity: 1 }}
+          viewport={{ once: false, margin: "-80px" }}
+          transition={{ type: "spring", stiffness: 70, damping: 8, mass: 1.5, delay: 0.15 }}
           className="relative flex order-first lg:order-none h-[280px] sm:h-[480px] lg:h-[560px] items-start justify-center"
         >
           {/* lanyard strip */}

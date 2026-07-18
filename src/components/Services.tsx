@@ -42,10 +42,10 @@ export default function Services() {
     <section className="relative bg-bg-primary py-32">
       <div className="mx-auto w-full max-w-4xl px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: -80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
+          viewport={{ once: false, margin: "-100px" }}
+          transition={{ type: "spring", stiffness: 70, damping: 10, mass: 1.2 }}
           className="mb-16 text-center"
         >
           <div className="mb-4 flex items-center justify-center gap-3">
@@ -73,10 +73,10 @@ export default function Services() {
             return (
               <motion.li
                 key={s.n}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: -40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ delay: i * 0.08, duration: 0.6 }}
+                viewport={{ once: false, margin: "-80px" }}
+                transition={{ type: "spring", stiffness: 80, damping: 12, delay: i * 0.08 }}
               >
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}

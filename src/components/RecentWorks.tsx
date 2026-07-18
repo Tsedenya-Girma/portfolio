@@ -109,7 +109,13 @@ export default function RecentWorks() {
   return (
     <section id="work" className="relative bg-bg-primary py-16 sm:py-32 overflow-hidden">
       <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
-        <div className="mb-8 sm:mb-16 flex flex-wrap items-end justify-between gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, margin: "-100px" }}
+          transition={{ type: "spring", stiffness: 70, damping: 10, mass: 1.2 }}
+          className="mb-8 sm:mb-16 flex flex-wrap items-end justify-between gap-6"
+        >
           <div>
             <div className="mb-4 flex items-center gap-3">
               <span className="h-2 w-2 rounded-full bg-accent" />
@@ -139,9 +145,15 @@ export default function RecentWorks() {
               className="transition-transform group-hover:rotate-45"
             />
           </a>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 gap-6 sm:gap-12 lg:grid-cols-12 lg:gap-16 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: -60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, margin: "-80px" }}
+          transition={{ type: "spring", stiffness: 70, damping: 10, mass: 1.2, delay: 0.1 }}
+          className="grid grid-cols-1 gap-6 sm:gap-12 lg:grid-cols-12 lg:gap-16 items-center"
+        >
           {/* Stack - Horizontal Cover Flow */}
           <div className="lg:col-span-7">
             <div
@@ -302,7 +314,7 @@ export default function RecentWorks() {
               </motion.div>
             </AnimatePresence>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

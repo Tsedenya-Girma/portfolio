@@ -35,10 +35,10 @@ export default function Footer() {
       <div className="relative z-10 mx-auto w-full max-w-7xl">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: -80 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ type: "spring", stiffness: 70, damping: 10, mass: 1.2 }}
           >
             <div className="mb-6 flex items-center gap-3">
               <span className="h-2 w-2 rounded-full bg-accent" />
@@ -89,14 +89,10 @@ export default function Footer() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: -80 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{
-              duration: 0.8,
-              delay: 0.1,
-              ease: [0.32, 0.72, 0, 1],
-            }}
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ type: "spring", stiffness: 70, damping: 10, mass: 1.2, delay: 0.15 }}
             className="grid grid-cols-2 gap-8 lg:justify-self-end"
           >
             <div>

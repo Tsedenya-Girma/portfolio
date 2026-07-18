@@ -34,10 +34,10 @@ export default function About() {
     <section id="about" className="relative bg-bg-primary py-32">
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-16 px-6 lg:grid-cols-2 lg:px-10">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: -80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
+          viewport={{ once: false, margin: "-100px" }}
+          transition={{ type: "spring", stiffness: 70, damping: 10, mass: 1.2 }}
         >
           <div className="mb-6 flex items-center gap-3">
             <span className="h-2 w-2 rounded-full bg-accent" />
@@ -86,10 +86,10 @@ export default function About() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: -80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
+          viewport={{ once: false, margin: "-100px" }}
+          transition={{ type: "spring", stiffness: 70, damping: 10, mass: 1.2, delay: 0.15 }}
           className="rounded-3xl border border-accent/25 bg-bg-secondary/70 p-8 backdrop-blur-md"
         >
           <div className="mb-8 text-sm font-semibold uppercase tracking-widest text-text-secondary">
@@ -99,10 +99,10 @@ Tech Stack & Tools
             {skills.map((skill, i) => (
               <motion.span
                 key={skill}
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05, duration: 0.5 }}
+                viewport={{ once: false }}
+                transition={{ type: "spring", stiffness: 80, damping: 12, delay: i * 0.04 }}
                 className="cursor-default rounded-full border border-accent/25 bg-bg-secondary/60 px-4 py-2 text-sm text-text-primary/85 transition-all hover:border-accent hover:text-accent hover:shadow-[0_0_15px_rgba(182,138,92,0.25)]"
               >
                 {skill}

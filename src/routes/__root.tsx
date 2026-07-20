@@ -89,7 +89,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Full-stack software engineer building real-world products with React, Next.js, Node.js, and modern databases.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/images/og-preview.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content: "Tsedenya Girma — Software Engineer",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Full-stack software engineer building real-world products with React, Next.js, Node.js, and modern databases.",
+      },
+      { name: "twitter:image", content: "/images/og-preview.png" },
     ],
     links: [
       {
